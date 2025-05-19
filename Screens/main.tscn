@@ -1,17 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1eblpnb12jww"]
+[gd_scene load_steps=5 format=3 uid="uid://d1eblpnb12jww"]
 
 [ext_resource type="PackedScene" uid="uid://cpn7g03rqfhkj" path="res://Screens/player.tscn" id="1_3s0xb"]
 [ext_resource type="PackedScene" uid="uid://dcilefw5xvo6l" path="res://Screens/trap.tscn" id="1_762ts"]
+[ext_resource type="PackedScene" uid="uid://ds651c8t8wsx1" path="res://Screens/map.tscn" id="1_ham8x"]
 [ext_resource type="PackedScene" uid="uid://cwosclorw8184" path="res://Screens/enemies.tscn" id="2_ham8x"]
 
 [node name="Main" type="Node2D"]
 
+[node name="Map" parent="." instance=ExtResource("1_ham8x")]
+
 [node name="Axit" parent="." instance=ExtResource("1_762ts")]
-position = Vector2(66, 49)
+position = Vector2(223, 91)
 
 [node name="Enemies" parent="." instance=ExtResource("2_ham8x")]
-position = Vector2(89, 23)
+position = Vector2(198, 88)
 
 [node name="Player" parent="." instance=ExtResource("1_3s0xb")]
-position = Vector2(67, 29)
-collision_mask = 8
+position = Vector2(174, 96)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]

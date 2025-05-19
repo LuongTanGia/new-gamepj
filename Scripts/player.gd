@@ -35,7 +35,7 @@ func player_movement():
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
 
-func animate_player():
+func animate_player(delta: float) -> void:
 	if can_move:
 		return
 
@@ -73,8 +73,8 @@ func animate_player():
 			sprite.scale.x = abs(sprite.scale.x)
 		elif velocity.x < 0:
 			sprite.scale.x = - abs(sprite.scale.x)
-			
-	move_and_slide()
+	
+	move_and_collide(velocity * delta)
 
 func hurt(damage: float) -> void:
 	print("Hurt: ", damage)
@@ -89,4 +89,4 @@ func hurt(damage: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	player_movement()
-	animate_player()
+	animate_player(delta)
