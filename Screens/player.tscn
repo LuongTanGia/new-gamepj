@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpn7g03rqfhkj"]
+
+[ext_resource type="Script" uid="uid://drjg46wcipexa" path="res://Scripts/player.gd" id="1_8wcn4"]
+[ext_resource type="SpriteFrames" uid="uid://ofx230byq3rd" path="res://Animates/player_body.tres" id="2_ju2r5"]
+[ext_resource type="PackedScene" uid="uid://dm73bfqo0inxl" path="res://Screens/player_hand.tscn" id="5_vkjvn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68qy6"]
+radius = 3.0
+height = 12.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_body", "hand")]
+script = ExtResource("1_8wcn4")
+animated_body = NodePath("AnimatedBody")
+hand = NodePath("PlayerHand")
+
+[node name="AnimatedBody" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.91323e-13, -6)
+rotation = -0.00265779
+sprite_frames = ExtResource("2_ju2r5")
+animation = &"Walk"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_68qy6")
+
+[node name="PlayerHand" parent="." instance=ExtResource("5_vkjvn")]
+position = Vector2(0, -6)
