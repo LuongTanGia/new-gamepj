@@ -3,3 +3,4 @@ root = true
 [*]
 charset = utf-8
 max_line_length = 80
+end_of_line = lf

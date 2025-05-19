@@ -13,5 +13,5 @@
 		80,
 		120
 	],
-  "editor.insertSpaces": false,
+  "files.eol": "\n"
 }
