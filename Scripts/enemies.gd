@@ -10,7 +10,6 @@ func _physics_process(delta: float) -> void:
 	$AnimatedSprite2D.play("Idle")
 
 func hurt(damage: float) -> void:
-	print("Hurt: ", damage)
 	$AnimatedSprite2D.play("Hurt")
 	can_move = true
 
@@ -21,8 +20,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("Area entered: ", area.get_parent().name)
-	if area.get_parent().name == "PlayerHand" and area.get_parent().attack:
-		print("Player entered the area")
+	var body: Node2D = area.get_parent()
+	if body.name == "PlayerHand" and body.attack:
 		$AnimatedSprite2D.play("Attack")
 		hurt(10)

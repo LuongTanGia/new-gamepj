@@ -27,7 +27,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	attack = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("Body entered: ", body.name)
 	if body.name == "Enemies":
-		print("Player attacked: ", body.name)
 		body.hurt(10)
