@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm73bfqo0inxl"]
+
+[ext_resource type="Script" uid="uid://cqrkfx0xcuyc5" path="res://Scripts/player_hand.gd" id="1_anspr"]
+[ext_resource type="SpriteFrames" uid="uid://civhdd7ehc42o" path="res://Animates/player_hand.tres" id="2_tqp3h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anspr"]
+radius = 7.15575
+height = 29.2106
+
+[node name="PlayerHand" type="Node2D"]
+script = ExtResource("1_anspr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_tqp3h")
+animation = &"Attack"
+autoplay = "Idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(14, 1.19209e-07)
+scale = Vector2(1.81672, 0.547747)
+shape = SubResource("CapsuleShape2D_anspr")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

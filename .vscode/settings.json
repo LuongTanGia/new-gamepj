@@ -1,0 +1,17 @@
+{
+	"cSpell.words": ["elif", "onready"],
+	"prettier.enable": false,
+	"editor.formatOnSave": true,
+	"files.exclude": {
+		"**/.uid": true,
+		"**/.import": false,
+	},
+	"editor.detectIndentation": false,
+	"editor.tabSize": 2,
+  "editor.useTabStops": true,
+	"editor.rulers": [
+		80,
+		120
+	],
+  "files.eol": "\n"
+}

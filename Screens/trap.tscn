@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcilefw5xvo6l"]
+
+[ext_resource type="Script" uid="uid://dhyrldov86ewj" path="res://Scripts/axit.gd" id="1_kohad"]
+[ext_resource type="Texture2D" uid="uid://dpoc8hib3xo1" path="res://icon.svg" id="2_aocrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ham8x"]
+
+[node name="Axit" type="Area2D"]
+collision_layer = 0
+collision_mask = 9
+script = ExtResource("1_kohad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ham8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.807325, 0.247918, 0.237324, 1)
+scale = Vector2(0.179688, 0.179688)
+texture = ExtResource("2_aocrh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
