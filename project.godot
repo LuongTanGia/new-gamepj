@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
-window/stretch/scale=6.0
 
 [input]
 

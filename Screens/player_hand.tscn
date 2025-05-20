@@ -12,7 +12,7 @@ script = ExtResource("1_anspr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_tqp3h")
-animation = &"Attack"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="."]

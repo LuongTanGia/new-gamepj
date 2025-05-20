@@ -16,6 +16,40 @@ position = Vector2(223, 91)
 position = Vector2(198, 88)
 
 [node name="Player" parent="." instance=ExtResource("1_3s0xb")]
-position = Vector2(174, 96)
+position = Vector2(321, 25)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+
+[node name="SubViewport" type="SubViewport" parent="Player/Camera2D"]
+size_2d_override_stretch = true
+
+[node name="UI" type="Control" parent="Player/Camera2D"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.5
+offset_top = -80.0
+offset_right = 142.5
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerName" type="Label" parent="Player/Camera2D/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -25.0
+offset_right = 41.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+text = "Admin"
