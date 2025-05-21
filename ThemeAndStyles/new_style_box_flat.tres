@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://cicepaxanmsv2"]
+
+[resource]
+bg_color = Color(0.721569, 0.435294, 0.313726, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.894118, 0.65098, 0.443137, 1)

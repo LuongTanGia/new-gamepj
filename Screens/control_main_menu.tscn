@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvn4acuxxy75v"]
+
+[ext_resource type="Texture2D" uid="uid://bshxkar4q3jyx" path="res://Assets/UI/panel.png" id="1_kk5nj"]
+[ext_resource type="StyleBox" uid="uid://cicepaxanmsv2" path="res://ThemeAndStyles/new_style_box_flat.tres" id="2_15cq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kk5nj"]
+
+[sub_resource type="Theme" id="Theme_utuid"]
+Button/font_sizes/font_size = 8
+Button/styles/hover = SubResource("StyleBoxEmpty_kk5nj")
+Button/styles/normal = ExtResource("2_15cq5")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -175.0
+offset_right = 200.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 150)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -350.0
+offset_bottom = -306.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+texture = ExtResource("1_kk5nj")
+region_rect = Rect2(0, 0, 9, 9)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 11
+
+[node name="ButtonPlay" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_utuid")
+theme_override_font_sizes/font_size = 30
+text = "Play
+"
+
+[node name="ButtonJoin" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_utuid")
+theme_override_font_sizes/font_size = 30
+text = "Join"
+
+[node name="ButtonOption" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_utuid")
+theme_override_font_sizes/font_size = 30
+text = "Option"
+
+[node name="ButtonExit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_utuid")
+theme_override_font_sizes/font_size = 30
+text = "Exit"

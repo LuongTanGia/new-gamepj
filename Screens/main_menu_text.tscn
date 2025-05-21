@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4uy8qpi8lpys"]
+
+[ext_resource type="PackedScene" uid="uid://ds651c8t8wsx1" path="res://Screens/map.tscn" id="1_sqanv"]
+[ext_resource type="PackedScene" uid="uid://bvn4acuxxy75v" path="res://Screens/control_main_menu.tscn" id="2_jg4yl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("1_sqanv")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(258, 94)
+zoom = Vector2(4, 4)
+
+[node name="Control" parent="Camera2D" instance=ExtResource("2_jg4yl")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(0.4, 0.4)
