@@ -1,14 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvn4acuxxy75v"]
+[gd_scene load_steps=3 format=3 uid="uid://bvn4acuxxy75v"]
 
 [ext_resource type="Texture2D" uid="uid://bshxkar4q3jyx" path="res://Assets/UI/panel.png" id="1_kk5nj"]
-[ext_resource type="StyleBox" uid="uid://cicepaxanmsv2" path="res://ThemeAndStyles/new_style_box_flat.tres" id="2_15cq5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kk5nj"]
-
-[sub_resource type="Theme" id="Theme_utuid"]
-Button/font_sizes/font_size = 8
-Button/styles/hover = SubResource("StyleBoxEmpty_kk5nj")
-Button/styles/normal = ExtResource("2_15cq5")
+[ext_resource type="Theme" uid="uid://jdupe5a5fy8n" path="res://ThemeAndStyles/control_theme.tres" id="2_kk5nj"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -69,25 +62,25 @@ theme_override_constants/separation = 11
 
 [node name="ButtonPlay" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_utuid")
+theme = ExtResource("2_kk5nj")
 theme_override_font_sizes/font_size = 30
 text = "Play
 "
 
 [node name="ButtonJoin" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_utuid")
+theme = ExtResource("2_kk5nj")
 theme_override_font_sizes/font_size = 30
 text = "Join"
 
 [node name="ButtonOption" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_utuid")
+theme = ExtResource("2_kk5nj")
 theme_override_font_sizes/font_size = 30
 text = "Option"
 
 [node name="ButtonExit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_utuid")
+theme = ExtResource("2_kk5nj")
 theme_override_font_sizes/font_size = 30
 text = "Exit"

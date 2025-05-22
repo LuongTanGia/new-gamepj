@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://jdupe5a5fy8n"]
+
+[ext_resource type="StyleBox" uid="uid://cicepaxanmsv2" path="res://ThemeAndStyles/new_style_box_flat.tres" id="1_3knce"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3knce"]
+bg_color = Color(0.760784, 0.521569, 0.411765, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.909804, 0.815686, 0.654902, 1)
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[resource]
+Button/font_sizes/font_size = 8
+Button/styles/hover = SubResource("StyleBoxFlat_3knce")
+Button/styles/normal = ExtResource("1_3knce")

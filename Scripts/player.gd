@@ -8,12 +8,15 @@ class_name Player
 @export var animated_body: AnimatedSprite2D
 @export var hand: Node2D
 
+@onready var interact_ui := $InteractUI
+
 var can_move: bool = false
 
 func _ready() -> void:
 	# For sure variable not null
 	animated_body = $AnimatedBody
 	hand = $PlayerHand
+	Global.set_player_node(self)
 
 func player_movement():
 	var direction := Input.get_vector(
@@ -31,6 +34,10 @@ func player_movement():
 		else:
 			velocity.x = direction.x * speed * 0.5
 			velocity.y = direction.y * speed * 0.5
+	elif not can_move:
+		# If not moving, stop the player
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
@@ -85,7 +92,6 @@ func hurt(damage: float) -> void:
 		func() -> void:
 			can_move = false
 	)
-
 
 func _physics_process(delta: float) -> void:
 	player_movement()

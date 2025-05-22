@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpn7g03rqfhkj"]
+[gd_scene load_steps=6 format=3 uid="uid://cpn7g03rqfhkj"]
 
 [ext_resource type="Script" uid="uid://drjg46wcipexa" path="res://Scripts/player.gd" id="1_8wcn4"]
 [ext_resource type="SpriteFrames" uid="uid://ofx230byq3rd" path="res://Animates/player_body.tres" id="2_ju2r5"]
@@ -8,8 +8,12 @@
 radius = 3.0
 height = 12.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ju2r5"]
+radius = 6.0
+height = 16.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_body", "hand")]
-collision_mask = 15
+collision_mask = 31
 script = ExtResource("1_8wcn4")
 animated_body = NodePath("AnimatedBody")
 hand = NodePath("PlayerHand")
@@ -27,3 +31,41 @@ shape = SubResource("CapsuleShape2D_68qy6")
 
 [node name="PlayerHand" parent="." instance=ExtResource("5_vkjvn")]
 position = Vector2(0, -6)
+
+[node name="Area2D" type="Area2D" parent="." groups=["PlayerHitBox"]]
+collision_mask = 31
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_ju2r5")
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -36.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.721569, 0.435294, 0.313726, 1)
+
+[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -10.0
+offset_right = 67.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Press F to pickup"

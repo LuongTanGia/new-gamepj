@@ -10,13 +10,14 @@ collision_layer = 0
 collision_mask = 9
 script = ExtResource("1_kohad")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ham8x")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.807325, 0.247918, 0.237324, 1)
 scale = Vector2(0.179688, 0.179688)
 texture = ExtResource("2_aocrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ham8x")
+debug_color = Color(0.909093, 0.217055, 0.576727, 0.42)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

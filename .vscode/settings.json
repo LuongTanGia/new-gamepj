@@ -1,5 +1,9 @@
 {
-	"cSpell.words": ["elif", "onready"],
+	"cSpell.words": [
+    "elif",
+    "hitbox",
+    "onready"
+  ],
 	"prettier.enable": false,
 	"editor.formatOnSave": true,
 	"files.exclude": {

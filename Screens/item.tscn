@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5agqrlrhe2m1"]
+
+[ext_resource type="Script" uid="uid://d2lmmtntrodxt" path="res://Scripts/item.gd" id="1_koje5"]
+[ext_resource type="Texture2D" uid="uid://dd638whwmw654" path="res://Assets/UI/sword.png" id="1_vyj0p"]
+[ext_resource type="Texture2D" uid="uid://da8wkvrjk1oq4" path="res://Assets/UI/expression_confused.png" id="2_m1hrv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_koje5"]
+radius = 2.21249
+height = 18.8049
+
+[node name="Item" type="Node2D" groups=["Item"]]
+script = ExtResource("1_koje5")
+icon = ExtResource("2_m1hrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vyj0p")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3)
+scale = Vector2(3.61583, 0.425422)
+shape = SubResource("CapsuleShape2D_koje5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

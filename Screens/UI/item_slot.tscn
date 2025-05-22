@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8p3awdpvuair"]
+
+[ext_resource type="Theme" uid="uid://jdupe5a5fy8n" path="res://ThemeAndStyles/control_theme.tres" id="1_cedd3"]
+[ext_resource type="Script" uid="uid://cvl7vbiqs2wu2" path="res://Scripts/item_slot.gd" id="2_tohyf"]
+
+[node name="Slot" type="Button"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 60.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+theme = ExtResource("1_cedd3")
+script = ExtResource("2_tohyf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Hotkey" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 11.0
+offset_bottom = 32.0
+theme_override_constants/margin_left = 5
+
+[node name="Label" type="Label" parent="Hotkey"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+
+[node name="Amount" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Amount"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26

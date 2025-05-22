@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1eblpnb12jww"]
+[gd_scene load_steps=10 format=3 uid="uid://d1eblpnb12jww"]
 
 [ext_resource type="PackedScene" uid="uid://cpn7g03rqfhkj" path="res://Screens/player.tscn" id="1_3s0xb"]
 [ext_resource type="PackedScene" uid="uid://dcilefw5xvo6l" path="res://Screens/trap.tscn" id="1_762ts"]
 [ext_resource type="PackedScene" uid="uid://ds651c8t8wsx1" path="res://Screens/map.tscn" id="1_ham8x"]
 [ext_resource type="PackedScene" uid="uid://cwosclorw8184" path="res://Screens/enemies.tscn" id="2_ham8x"]
+[ext_resource type="PackedScene" uid="uid://b5agqrlrhe2m1" path="res://Screens/item.tscn" id="5_yjoyc"]
+[ext_resource type="Texture2D" uid="uid://dkj1fjeogenav" path="res://Assets/UI/axe.png" id="6_eogsy"]
+[ext_resource type="Texture2D" uid="uid://dro2461l5qrpn" path="res://Assets/UI/hammer.png" id="7_grymg"]
+[ext_resource type="Texture2D" uid="uid://c41d6gvc6ywh7" path="res://Assets/UI/pickaxe.png" id="8_ty7eg"]
+[ext_resource type="PackedScene" uid="uid://bwh3twdsyod8x" path="res://Screens/UI/UserInterface.tscn" id="9_grymg"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,7 +21,7 @@ position = Vector2(223, 91)
 position = Vector2(198, 88)
 
 [node name="Player" parent="." instance=ExtResource("1_3s0xb")]
-position = Vector2(321, 25)
+position = Vector2(317, 32)
 
 [node name="PlayerName" type="Label" parent="Player"]
 anchors_preset = 8
@@ -35,3 +40,53 @@ text = "Admin"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
+
+[node name="DropItems" type="Node2D" parent="."]
+
+[node name="Item" parent="DropItems" instance=ExtResource("5_yjoyc")]
+position = Vector2(295, 26)
+item_name = "swold"
+type = "wp"
+description = "qwe"
+
+[node name="Item2" parent="DropItems" instance=ExtResource("5_yjoyc")]
+position = Vector2(295, 44)
+item_name = "axe"
+type = "wp"
+description = "qwe"
+icon = ExtResource("6_eogsy")
+
+[node name="Item3" parent="DropItems" instance=ExtResource("5_yjoyc")]
+position = Vector2(295, 63)
+item_name = "hammer"
+type = "wp"
+description = "qwe"
+icon = ExtResource("7_grymg")
+
+[node name="Item4" parent="DropItems" instance=ExtResource("5_yjoyc")]
+position = Vector2(295, 81)
+item_name = "pickaxe"
+type = "wp"
+description = "qwe"
+icon = ExtResource("8_ty7eg")
+
+[node name="Item5" parent="DropItems" instance=ExtResource("5_yjoyc")]
+position = Vector2(321, 81)
+item_name = "pickaxe"
+type = "wp"
+description = "qwe"
+icon = ExtResource("8_ty7eg")
+
+[node name="Item6" parent="DropItems" instance=ExtResource("5_yjoyc")]
+position = Vector2(346, 81)
+item_name = "pickaxe"
+type = "wp"
+description = "qwe"
+icon = ExtResource("8_ty7eg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UserInterface" parent="CanvasLayer" instance=ExtResource("9_grymg")]
+
+[connection signal="area_entered" from="Axit" to="Axit" method="_on_area_entered"]
+[connection signal="area_exited" from="Axit" to="Axit" method="_on_area_exited"]
