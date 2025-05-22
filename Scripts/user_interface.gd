@@ -23,12 +23,9 @@ func _input(event: InputEvent) -> void:
 			inventory.show()
 
 func update_inventory() -> void:
-	print("Updating inventory...")
 	if inventory == null:
 		return
 
-
-	print("Updating inventory...123")
 	for i in range(Global.inventory.size()):
 		var item = Global.inventory[i]
 		if item != null:
