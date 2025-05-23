@@ -11,9 +11,8 @@ func _ready() -> void:
 		inventory.hide()
 
 	update_inventory()
-
-func _process(_delta: float) -> void:
 	Global.inventory_changed.connect(update_inventory)
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_inventory"):

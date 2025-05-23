@@ -10,7 +10,7 @@ var player_node: Node2D
 func _ready() -> void:
 	# Initialize the inventory
 	inventory.resize(MAX_INVENTORY_SIZE)
-	player_node = get_parent().get_node("Player")
+	player_node = get_parent().get_node("Main/Player")
 
 func add_item(item) -> bool:
 	var item_index: int = get_item_index(item)

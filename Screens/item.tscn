@@ -9,6 +9,7 @@ radius = 2.21249
 height = 18.8049
 
 [node name="Item" type="Node2D" groups=["Item"]]
+y_sort_enabled = true
 script = ExtResource("1_koje5")
 icon = ExtResource("2_m1hrv")
 

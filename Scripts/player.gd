@@ -84,7 +84,6 @@ func animate_player(delta: float) -> void:
 	move_and_collide(velocity * delta)
 
 func hurt(damage: float) -> void:
-	print("Hurt: ", damage)
 	can_move = true
 	animated_body.play("Hurt")
 	hand.animate_play("Hurt",
