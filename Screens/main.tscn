@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1eblpnb12jww"]
+[gd_scene load_steps=11 format=3 uid="uid://d1eblpnb12jww"]
 
 [ext_resource type="PackedScene" uid="uid://cpn7g03rqfhkj" path="res://Screens/player.tscn" id="1_3s0xb"]
 [ext_resource type="PackedScene" uid="uid://dcilefw5xvo6l" path="res://Screens/trap.tscn" id="1_762ts"]
@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dkj1fjeogenav" path="res://Assets/UI/axe.png" id="6_eogsy"]
 [ext_resource type="Texture2D" uid="uid://dro2461l5qrpn" path="res://Assets/UI/hammer.png" id="7_grymg"]
 [ext_resource type="Texture2D" uid="uid://c41d6gvc6ywh7" path="res://Assets/UI/pickaxe.png" id="8_ty7eg"]
-[ext_resource type="PackedScene" uid="uid://bwh3twdsyod8x" path="res://Screens/UI/UserInterface.tscn" id="9_grymg"]
+[ext_resource type="PackedScene" uid="uid://bwh3twdsyod8x" path="res://Screens/UI/user_interface.tscn" id="9_grymg"]
+[ext_resource type="Texture2D" uid="uid://dgf230ghxevrp" path="res://Assets/UI/shovel.png" id="9_ty7eg"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Map" parent="." instance=ExtResource("1_ham8x")]
 
@@ -21,8 +23,7 @@ position = Vector2(223, 91)
 position = Vector2(198, 88)
 
 [node name="Player" parent="." instance=ExtResource("1_3s0xb")]
-y_sort_enabled = true
-position = Vector2(317, 32)
+position = Vector2(310, 29)
 
 [node name="PlayerName" type="Label" parent="Player"]
 anchors_preset = 8
@@ -42,51 +43,51 @@ text = "Admin"
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
 
-[node name="Item" parent="." instance=ExtResource("5_yjoyc")]
+[node name="DropItems" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Item" parent="DropItems" instance=ExtResource("5_yjoyc")]
+y_sort_enabled = false
 position = Vector2(295, 26)
 item_name = "swold"
 type = "wp"
 description = "qwe"
-
-[node name="DropItems" type="Node2D" parent="."]
-y_sort_enabled = true
+icon = ExtResource("8_ty7eg")
 
 [node name="Item2" parent="DropItems" instance=ExtResource("5_yjoyc")]
-position = Vector2(295, 44)
-item_name = "axe"
+y_sort_enabled = false
+position = Vector2(295, 39)
+item_name = "swold"
 type = "wp"
 description = "qwe"
-icon = ExtResource("6_eogsy")
+icon = ExtResource("8_ty7eg")
 
 [node name="Item3" parent="DropItems" instance=ExtResource("5_yjoyc")]
-position = Vector2(295, 63)
-item_name = "hammer"
+y_sort_enabled = false
+position = Vector2(295, 55)
+item_name = "swold"
 type = "wp"
 description = "qwe"
 icon = ExtResource("7_grymg")
 
 [node name="Item4" parent="DropItems" instance=ExtResource("5_yjoyc")]
-position = Vector2(295, 81)
-item_name = "pickaxe"
+y_sort_enabled = false
+position = Vector2(295, 69)
+item_name = "swold"
 type = "wp"
 description = "qwe"
-icon = ExtResource("8_ty7eg")
+icon = ExtResource("6_eogsy")
 
 [node name="Item5" parent="DropItems" instance=ExtResource("5_yjoyc")]
-position = Vector2(321, 81)
-item_name = "pickaxe"
+y_sort_enabled = false
+position = Vector2(295, 82)
+item_name = "swold"
 type = "wp"
 description = "qwe"
-icon = ExtResource("8_ty7eg")
-
-[node name="Item6" parent="DropItems" instance=ExtResource("5_yjoyc")]
-position = Vector2(346, 81)
-item_name = "pickaxe"
-type = "wp"
-description = "qwe"
-icon = ExtResource("8_ty7eg")
+icon = ExtResource("9_ty7eg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="UserInterface" parent="CanvasLayer" instance=ExtResource("9_grymg")]
 

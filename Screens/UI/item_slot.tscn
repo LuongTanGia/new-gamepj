@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://jdupe5a5fy8n" path="res://ThemeAndStyles/control_theme.tres" id="1_cedd3"]
 [ext_resource type="Script" uid="uid://cvl7vbiqs2wu2" path="res://Scripts/item_slot.gd" id="2_tohyf"]
 
+
 [node name="Slot" type="Button"]
 custom_minimum_size = Vector2(60, 60)
 offset_right = 60.0
