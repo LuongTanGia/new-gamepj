@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://o7kealde8ttm"]
+
+[ext_resource type="PackedScene" uid="uid://b17d135w7snve" path="res://V2/Player/player.tscn" id="1_gmquw"]
+[ext_resource type="PackedScene" uid="uid://btx652iw6d7ku" path="res://V2/UI/hotbar.tscn" id="2_57l26"]
+[ext_resource type="PackedScene" uid="uid://cijo7rnofgx4o" path="res://V2/UI/inventory.tscn" id="3_3s28o"]
+[ext_resource type="Texture2D" uid="uid://dd638whwmw654" path="res://Assets/UI/sword.png" id="3_njfj5"]
+[ext_resource type="Script" uid="uid://bmno5g5o3t1gm" path="res://V2/UI/inventory.gd" id="4_3s28o"]
+[ext_resource type="PackedScene" uid="uid://b5agqrlrhe2m1" path="res://Screens/item.tscn" id="5_yas3t"]
+
+[node name="Mainv2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Player" parent="." instance=ExtResource("1_gmquw")]
+
+[node name="Item" parent="." instance=ExtResource("5_yas3t")]
+position = Vector2(40, 0)
+item_name = "swold"
+description = "is a weapen"
+icon = ExtResource("3_njfj5")
+type = "weapen"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -320.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 40)
+theme_override_constants/margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Hotbar" parent="CanvasLayer/Control/MarginContainer" instance=ExtResource("2_57l26")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.822
+offset_right = 0.000305176
+offset_bottom = 0.0399017
+
+[node name="Inventory" parent="CanvasLayer/Control/Control" instance=ExtResource("3_3s28o")]
+unique_name_in_owner = true
+layout_mode = 1
+script = ExtResource("4_3s28o")

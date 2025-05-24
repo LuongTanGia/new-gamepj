@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://btx652iw6d7ku"]
+
+[ext_resource type="PackedScene" uid="uid://daoibho808fve" path="res://V2/UI/item_slot.tscn" id="1_dm2uw"]
+[ext_resource type="Texture2D" uid="uid://0u52no04icmx" path="res://Assets/UI/panel-1.png" id="2_wmwdg"]
+[ext_resource type="Texture2D" uid="uid://dd638whwmw654" path="res://Assets/UI/sword.png" id="3_tb0h3"]
+[ext_resource type="Texture2D" uid="uid://dkj1fjeogenav" path="res://Assets/UI/axe.png" id="4_a17v8"]
+[ext_resource type="Texture2D" uid="uid://dro2461l5qrpn" path="res://Assets/UI/hammer.png" id="5_1yvcc"]
+[ext_resource type="Texture2D" uid="uid://dgf230ghxevrp" path="res://Assets/UI/shovel.png" id="6_3tef5"]
+[ext_resource type="Texture2D" uid="uid://c87tophm0b8d3" path="res://Assets/UI/rod.png" id="7_pej15"]
+
+[node name="Hotbar" type="HBoxContainer"]
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="ItemSlot" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+texture = ExtResource("2_wmwdg")
+hotkey = "1"
+amount = "1"
+icon = ExtResource("3_tb0h3")
+is_selected = true
+
+[node name="ItemSlot2" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "2"
+amount = "1"
+icon = ExtResource("4_a17v8")
+
+[node name="ItemSlot3" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "3"
+amount = "1"
+icon = ExtResource("5_1yvcc")
+
+[node name="ItemSlot4" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "4"
+amount = "1"
+icon = ExtResource("6_3tef5")
+
+[node name="ItemSlot5" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "5"
+amount = "1"
+icon = ExtResource("7_pej15")
+
+[node name="ItemSlot6" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "6"
+amount = "1"
+
+[node name="ItemSlot7" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "7"
+amount = "1"
+
+[node name="ItemSlot8" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "8"
+amount = "1"
+
+[node name="ItemSlot9" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "9"
+amount = "1"
+
+[node name="ItemSlot10" parent="." instance=ExtResource("1_dm2uw")]
+layout_mode = 2
+hotkey = "10"
+amount = "1"

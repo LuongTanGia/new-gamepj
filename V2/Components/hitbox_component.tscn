@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cm84frojck7f5"]
+
+[node name="HitboxComponent" type="Area2D"]
+rotation = 1.5708

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://583fdrkkchlg"]
+
+[ext_resource type="Texture2D" uid="uid://c2vm3ial6p8r1" path="res://Assets/Characters/Skeleton/PNG/skeleton_idle_strip6.png" id="1_uf4cu"]
+[ext_resource type="PackedScene" uid="uid://bahj5jmkboucf" path="res://V2/Components/health_component.tscn" id="2_iawma"]
+[ext_resource type="Script" uid="uid://chftebhk655cp" path="res://V2/Components/health_component.gd" id="3_7puqd"]
+[ext_resource type="PackedScene" uid="uid://cm84frojck7f5" path="res://V2/Components/hitbox_component.tscn" id="4_pd2ki"]
+[ext_resource type="Script" uid="uid://b6g8spmdak1ro" path="res://V2/Components/hitbox_component.gd" id="5_12kjw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4wak"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd2ki"]
+size = Vector2(16, 13)
+
+[node name="Enemies" type="CharacterBody2D"]
+
+[node name="SkeletonIdleStrip6" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_uf4cu")
+hframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_g4wak")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_iawma")]
+script = ExtResource("3_7puqd")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_pd2ki")]
+script = ExtResource("5_12kjw")
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(-8.00001, -0.499957)
+shape = SubResource("RectangleShape2D_pd2ki")

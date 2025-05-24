@@ -20,12 +20,17 @@ Global="*res://Scripts/global.gd"
 
 [display]
 
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
+window/stretch/scale_mode="integer"
 
 [gui]
 
-theme/custom_font="uid://d36qj6yqy63fl"
+theme/custom_font="uid://c57uj2fo7n66c"
 theme/default_font_multichannel_signed_distance_field=true
 
 [input]
@@ -83,3 +88,10 @@ ui_inventory={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
+2d/size/window_height_override=720
+2d/size/window_width_override=1280
+2d/size/viewport_height=360
+2d/size/viewport_width=640
+2d/stretch/scale_mode="integer"

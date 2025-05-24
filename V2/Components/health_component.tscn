@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bahj5jmkboucf"]
+
+[node name="HealComponent" type="Node2D"]
+rotation = 1.5708

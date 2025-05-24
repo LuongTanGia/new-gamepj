@@ -87,7 +87,6 @@ description = "qwe"
 icon = ExtResource("9_ty7eg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="UserInterface" parent="CanvasLayer" instance=ExtResource("9_grymg")]
 

@@ -2,7 +2,9 @@
 	"cSpell.words": [
     "elif",
     "hitbox",
-    "onready"
+    "knockback",
+    "onready",
+    "spikey",
   ],
 	"prettier.enable": false,
 	"editor.formatOnSave": true,
@@ -10,7 +12,7 @@
 		"**/.uid": true,
 		"**/.import": false,
 	},
-	"editor.detectIndentation": false,
+	"editor.detectIndentation": true,
 	"editor.tabSize": 2,
   "editor.useTabStops": true,
 	"editor.rulers": [

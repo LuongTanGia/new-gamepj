@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://daoibho808fve"]
+
+[ext_resource type="Texture2D" uid="uid://bshxkar4q3jyx" path="res://Assets/UI/panel.png" id="1_2f17a"]
+[ext_resource type="Script" uid="uid://b01lhsk501cak" path="res://V2/UI/item_slot.gd" id="2_ru2mx"]
+
+[node name="ItemSlot" type="NinePatchRect"]
+custom_minimum_size = Vector2(25, 25)
+texture = ExtResource("1_2f17a")
+region_rect = Rect2(0, 0, 9, 9)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+script = ExtResource("2_ru2mx")
+
+[node name="Sprite" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="Sprite"]
+layout_mode = 2
+
+[node name="Hotkey" type="MarginContainer" parent="."]
+layout_mode = 1
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = -1
+
+[node name="Label" type="Label" parent="Hotkey"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+uppercase = true
+
+[node name="Amount" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = -5
+
+[node name="Label" type="Label" parent="Amount"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+vertical_alignment = 2
